@@ -20,7 +20,7 @@ generated = tokenizer.decode(outputs[0], skip_special_tokens=True)
 topic, title = generated.split("\n\n", maxsplit=1)
 
 # Set the prompt for the GPT-4All-J API to generate the article
-prompt = f"Write a blog post about {topic}. Include tips, advice, and insights to help readers learn more. Also, generate a title for the post: {title}"
+prompt = f"Write a blog post about {topic}. Must be at least 4 paragraphs, no more than 6."
 
 # Generate the article using GPT-4All-J
 inputs = tokenizer(prompt, return_tensors="pt")
